@@ -4,3 +4,6 @@ services:
 
 before_install:
   - docker build -t jsur/docker-prod-workflow -f Dockerfile.dev .
+
+script:
+  - docker run jsur/docker-prod-workflow npm run test -- --coverage
